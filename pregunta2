@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <math.h>
+#define tipo 5;
+int main(){
+int lado_a,lado_b,lado_c;
+char w[tipo];
+int x=0;
+scanf("%d %d %d",&lado_a,&lado_b,&lado_c);
+if(lado_a>0&&lado_b>0&&lado_c>0){
+    printf("valida\n");
+    x=1;
+}
+else{
+    printf("invalido\n");
+    x=0;
+    w=0;
+}
+if((x==1)&&(lado_a+lado_b>lado_c&&lado_a+lado_c>lado_b&&lado_b+lado_c>lado_a)){
+    printf("es un triangulo\n");
+}
+else{
+    printf("no triangulo\n");
+    x=0;
+    w=1;
+}
+if((x==1)&&(lado_a==lado_b&&b==lado_c)){
+    printf("equilatero\n");
+    w=2;
+}else{
+    x++;
+}
+if((x==2)&&(lado_a==lado_b||lado_a==lado_c||lado_b==lado_c)){
+    printf("isosceles\n");
+    w=3;
+}else{
+    x++;
+}
+if((x==3)&&(lado_a==lado_b||lado_a==lado_c||lado_b==lado_c)){
+    printf("escaleno\n");
+    w=4;
+}
+
+switch(tipo){
+    case 0; printf("El triangulo es invalido"); break;
+    case 1; printf("No forman un triangulo"); break;
+    case 2; printf("El triangulo es tipo:","equilatero"); 
+    
+    break;
+    case 3; printf("El triangulo es tipo: ", "iscoceles");
+
+    break;
+    case 4; s=(a+b+c)/2;
+    area = sqrt(s * (s-a) * (s-b) * (s-c))
+
+    printf("El triangulo es tipo: ","escaleno"); 
+    if((a>b)&&(b>=c)){
+        long long rect=b*b+c*c;
+        if((a*a)==(rect)){
+            printf("Rectangulo: si");
+        }else{
+            printf("Rectangulo: no");
+        }
+    }
+    else if((b>a)&&(a>=c)){
+        long long rect=a*a+c*c;
+        if((b*b)==(rect)){
+            printf("Rectangulo: si");
+        }else{
+            printf("Rectangulo: no");
+        }
+    }else{
+        long long rect=a*a+b*b;
+        if((c*c)==(rect)){
+            printf("Rectangulo: si");
+        }else{
+            printf("Rectangulo: no");
+        }
+    }
+    printf("El area es: ",area); 
+    break;
+
+}
+
+return 0;
+
+}
